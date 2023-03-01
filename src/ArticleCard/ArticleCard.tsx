@@ -7,7 +7,7 @@ export const ArticleCard = ({articleData}:{articleData: CleanedArticle}) => {
       <img src={articleData.images[2]}/>
       <p>{articleData.title}</p>
       <p>{articleData.byline}</p>
-      
+      <p>{articleData.publishedDate}</p>
     </div>
   )
 }
