@@ -6,8 +6,8 @@ const sections = ['arts', 'automobiles', 'books', 'business', 'fashion', 'food',
 export const Navbar = ({ getArticles }: {getArticles: (section: string) => void}) => {
   const [clicked, setClicked] = useState('')
 
-  const buttons = sections.map(section => {
-    return (<button className={`button-section ${clicked === section ? 'clicked' : ''}`} onClick={() => {
+  const buttons = sections.map((section, index) => {
+    return (<button key={index} className={`button-section ${clicked === section ? 'clicked' : ''}`} onClick={() => {
       setClicked(section)
       getArticles(section)
     }}>{section}</button>)
