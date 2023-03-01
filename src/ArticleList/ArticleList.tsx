@@ -1,5 +1,7 @@
+import './ArticleList.css'
+
 export const ArticleList = () => {
   return(
-    <div>ARTICLELIST</div>
+    <div className='article-list'>ARTICLELIST</div>
   )
 }

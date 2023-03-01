@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import logo from "./logo.svg"
 import "./App.css"
-import { Banner } from "./Banner/Banner"
+import { Navbar } from "./Navbar/Navbar"
 import { ArticleList } from "./ArticleList/ArticleList"
 import { Details } from "./Details/Details"
 import { fetchArticles } from "./apiCalls"
@@ -9,19 +9,14 @@ import { fetchArticles } from "./apiCalls"
 const App = () => {
   const [articles, setArticles] = useState([])
 
-  const getArticles = async () => {
-    const response = await fetchArticles()
-    console.log(response)
+  const getArticles = async (section: string) => {
+    const response = await fetchArticles(section)
     setArticles(response.results)
   }
 
-  useEffect(() => {
-    getArticles()
-  },[])
-
   return (
-    <div>
-      <Banner />
+    <div className='App'>
+      <Navbar getArticles={getArticles}/>
       <ArticleList />
       <Details />
     </div>
