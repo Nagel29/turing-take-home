@@ -20,7 +20,7 @@ export const ArticleList = ({articles}:{articles: CleanedArticle[]}) => {
   },[])
     
   return(
-    <Container>
+    <Container style={{paddingTop: '8%'}}>
         {rows}
     </Container>
   )
