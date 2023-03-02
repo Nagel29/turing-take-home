@@ -15,7 +15,7 @@ export const ArticleCard = ({
   const section = useParams()
 
   return (
-    <Card border="secondary" className="h-100" style={{ maxWidth: "350px" }}>
+    <Card className="h-100" style={{ maxWidth: "350px" }}>
       <Card.Img className="img-fluid" src={articleData.images[1]} />
       <Card.Body>
         <Card.Title style={{ height: "auto" }} className="fs-6">
@@ -26,6 +26,7 @@ export const ArticleCard = ({
         <ListGroup.Item>{articleData.byline}</ListGroup.Item>
         <ListGroup.Item>{articleData.publishedDate}</ListGroup.Item>
         <Button
+          style={{width: '90%', alignSelf: 'center', margin: '3%'}}
           variant="primary"
           onClick={() => {
             getDetails(articleData)
