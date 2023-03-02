@@ -10,7 +10,6 @@ const checkForMedia = (article: Article) => {
 
 export const cleanArticles = (articles: Article[]) => {
   const filteredGoodData = articles.filter(article => article.abstract && article.title)
-  console.log(filteredGoodData)
   return filteredGoodData.map(article => {
     return {
       abstract: article.abstract,

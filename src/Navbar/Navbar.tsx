@@ -1,4 +1,3 @@
-import './Navbar.css'
 import { useState } from 'react'
 
 const sections = ['arts', 'automobiles', 'books', 'business', 'fashion', 'food', 'health', 'home', 'insider', 'magazine', 'movies','obituaries', 'opinion', 'politics', 'realestate', 'science', 'sports', 'sundayreview', 'technology', 'theater', 'travel', 'us', 'world']
@@ -14,7 +13,7 @@ export const Navbar = ({ getArticles }: {getArticles: (section: string) => void}
   })
 
   return (
-    <nav className='nav'>
+    <nav className='h-25'>
       <h1>NEW YORK TIMES SEARCH</h1>
       {buttons}
     </nav>

@@ -13,11 +13,8 @@ const App = () => {
 
   const getArticles = async (section: string) => {
     const response = await fetchArticles(section)
-    console.log(response.results)
     setArticles(cleanArticles(response.results))
   }
-
-
 
   return (
     <div className='App'>
