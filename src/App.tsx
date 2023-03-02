@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { NavBar } from "./NavBar/NavBar"
-import { ArticleList } from "./ArticleList/ArticleList"
-import { Details } from "./Details/Details"
+import { NavBar } from "./components/NavBar"
+import { ArticleList } from "./components/ArticleList"
+import { Details } from "./components/Details"
 import { fetchArticles } from "./apiCalls"
 import { cleanArticles } from "./utilities"
 import { CleanedArticle } from "./interfaces"
@@ -31,7 +31,11 @@ const App = () => {
         <Route
           path="/:section"
           element={
-            <ArticleList getDetails={getDetails} getArticles={getArticles} articles={articles}/>
+            <ArticleList
+              getDetails={getDetails}
+              getArticles={getArticles}
+              articles={articles}
+            />
           }
         ></Route>
         <Route
