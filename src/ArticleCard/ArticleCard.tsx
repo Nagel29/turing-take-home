@@ -2,9 +2,13 @@ import { CleanedArticle } from "../interfaces"
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
-import Image from 'react-bootstrap/Image'
+import { useNavigate, useParams } from 'react-router-dom'
 
-export const ArticleCard = ({articleData}:{articleData: CleanedArticle}) => {
+export const ArticleCard = ({articleData, getDetails}:{articleData: CleanedArticle, getDetails: (article: CleanedArticle) => void}) => {
+
+  const navigate = useNavigate()
+  const section = useParams()
+
   return (
     <Card className='h-100' style={{maxWidth: '350px'}}>
       <Card.Img className='img-fluid' src={articleData.images[1]}/>
@@ -16,7 +20,10 @@ export const ArticleCard = ({articleData}:{articleData: CleanedArticle}) => {
       <ListGroup className="list-group-flush">
         <ListGroup.Item>{articleData.byline}</ListGroup.Item>
         <ListGroup.Item>{articleData.publishedDate}</ListGroup.Item>
-        <Button variant="primary">See More Details</Button>
+        <Button variant="primary" onClick={() => {
+          getDetails(articleData)
+          navigate(`/${section.section}/${articleData.title.split(" ").join("-")}`)
+          }}>See More Details</Button>
       </ListGroup>
     </Card>
   )
