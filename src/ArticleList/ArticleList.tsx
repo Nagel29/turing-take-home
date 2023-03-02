@@ -6,21 +6,21 @@ import Col from 'react-bootstrap/Col';
 
 
 export const ArticleList = ({articles}:{articles: CleanedArticle[]}) => {
-  const articleCards = articles.map((article, index) => <Col><ArticleCard key={index} articleData={article}/></Col>)
+  const articleCards = articles.map((article, index) => <Col md={true} style={{margin: '3%', width: 'auto'}}><ArticleCard key={index} articleData={article}/></Col>)
   
   let currentRow: JSX.Element[] = []
 
   const rows = articleCards.reduce((acc: JSX.Element[], card, index) => {
     currentRow.push(card)
     if ((index + 1) % 3 === 0) {
-      acc.push(<Row>{currentRow}</Row>)
+      acc.push(<Row style={{display: 'flex', justifyContent: 'center'}}>{currentRow}</Row>)
       currentRow = []
     }
     return acc
   },[])
     
   return(
-    <Container className='container-fluid'>
+    <Container>
         {rows}
     </Container>
   )
