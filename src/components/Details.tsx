@@ -1,4 +1,4 @@
-import { CleanedArticle } from "../interfaces"
+import { CleanedArticle } from "../utilities/interfaces"
 import { useState } from "react"
 import Button from "react-bootstrap/Button"
 import Image from "react-bootstrap/Image"
