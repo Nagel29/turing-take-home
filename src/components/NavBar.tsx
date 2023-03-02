@@ -3,6 +3,7 @@ import { Navbar, Tab, Tabs } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 
 const sections = [
+  "all",
   "arts",
   "automobiles",
   "books",
@@ -10,7 +11,6 @@ const sections = [
   "fashion",
   "food",
   "health",
-  "home",
   "insider",
   "magazine",
   "movies",

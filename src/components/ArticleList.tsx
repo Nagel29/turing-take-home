@@ -1,4 +1,4 @@
-import { CleanedArticle } from "../interfaces"
+import { CleanedArticle } from "../utilities/interfaces"
 import { ArticleCard } from "./ArticleCard"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -25,7 +25,7 @@ export const ArticleList = ({
 
   const articleCards = articles.map((article, index) => (
     <Col key={index} md={true} style={{ margin: "3%", width: "auto" }}>
-      <ArticleCard key={index} articleData={article} getDetails={getDetails}/>
+      <ArticleCard key={index} articleData={article} getDetails={getDetails} />
     </Col>
   ))
 
