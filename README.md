@@ -15,6 +15,7 @@ Given more time, additional features/fixes I would like to implement include:
   * Formatting dates on the article cards
   * A refined landing page
   * Error handling
+  * Loading animations
 
 ## Installation
 
